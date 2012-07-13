@@ -197,8 +197,10 @@ elgg.file_tools.load_folder = function(folder_guid){
     if(add_link){
       var path = elgg.parse_url(add_link, "path");
       var new_add_link = elgg.get_site_url() + 'file/add/' + elgg.get_page_owner_guid() + "?folder_guid=" + folder_guid;
+    var new_batch_link = elgg.get_site_url() + 'file/batch/' + elgg.get_page_owner_guid() + "?folder_guid=" + folder_guid;
 		
       $('ul.elgg-menu-title li.elgg-menu-item-add a').attr("href", new_add_link);
+      $('ul.elgg-menu-title li.elgg-menu-item-batch-upload a').attr("href", new_batch_link);
     }
     
     //update bookmark link and widget_manager multidashboard link
