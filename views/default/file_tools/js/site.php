@@ -291,10 +291,13 @@ elgg.file_tools.new_folder = function(event){
 	var hash = window.location.hash.substr(1);
 	var link = elgg.get_site_url() + "file_tools/folder/new/" + elgg.get_page_owner_guid() + "?folder_guid=" + hash;
 	
+  window.location = link;
+  /*
 	$.fancybox({
 		href: link,
 		titleShow: false
 	});
+  */
 }
 
 elgg.file_tools.init = function(){
