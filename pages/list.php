@@ -91,7 +91,11 @@
 			// build page elements
 			$title_text = elgg_echo("file:user", array($page_owner->name));
 			
-			$body = "<div id='file_tools_list_files_container'>" . elgg_view("graphics/ajax_loader", array("hidden" => false)) . "</div>";
+			//$body = "<div id='file_tools_list_files_container'>" . elgg_view("graphics/ajax_loader", array("hidden" => false)) . "</div>";
+			$body = elgg_view("file_tools/list/files", array("folder" => $folder, "files" => $files, 'sort_by' => $sort_by, 'direction' => $direction));
+			if (elgg_get_viewtype() == 'default') {
+			  $body = "<div id='file_tools_list_files_container'>" . $body . "</div>";
+			}
 			
 			// make sidebar
 			$sidebar = elgg_view("file_tools/list/tree", array("folder" => $folder, "folders" => $folders));

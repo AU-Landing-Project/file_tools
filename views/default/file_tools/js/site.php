@@ -206,8 +206,10 @@ elgg.file_tools.load_folder = function(folder_guid){
     //update bookmark link and widget_manager multidashboard link
     var new_bookmark_link = elgg.get_site_url() + 'bookmarks/add/' + elgg.get_page_owner_guid() + '?address=' + encodeURIComponent(window.location.href);
     var new_multidashboard_link = elgg.get_site_url() + 'multi_dashboard/edit/?internal_url=' + encodeURIComponent(window.location.href);
+	var new_rss_link = elgg.get_site_url() + 'file/owner/' + elgg.page_owner.username + '?view=rss&folder_guid=' + folder_guid;
     $(".elgg-menu-item-bookmark a").attr("href", new_bookmark_link);
     $("#widget-manager-multi_dashboard-extras").attr("href", new_multidashboard_link);
+	$(".elgg-menu-item-rss a").attr("href", new_rss_link);
 	});
 }
 
